@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #d8bfd8, #e6e6fa); /* Ombre effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .input-box {
+            margin-bottom: 15px;
+        }
+        .input-box label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .button {
+            text-align: center;
+        }
+        .button input[type="submit"] {
+            background-color: #6a5acd; /* Lavender color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button input[type="submit"]:hover {
+            background-color: #483d8b; /* Darker shade for hover */
+        }
+        .alert {
+            margin-top: 20px;
+        }
+        .alert-info {
+            background-color: #d0e6ff; /* Light blue background for info alerts */
+            color: #0056b3; /* Dark blue text for info alerts */
+            border-color: #0056b3; /* Dark blue border for info alerts */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Login</div>
+        <div class="content">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="user-details">
+                    <div class="input-box">
+                        <label for="username">User Name:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" name="submit" value="Login">
+                </div>
+            </form>
+            <!-- Display messages using custom alerts -->
+            {% for message in messages %}
+            <div class="alert alert-info mt-3">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

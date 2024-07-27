@@ -1,0 +1,161 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #d8bfd8, #e6e6fa);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        ul {
+            text-align: left;
+            color: #666;
+        }
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .team-member {
+            flex: 1 1 calc(33.333% - 20px);
+            text-align: center;
+            margin: 10px;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member h3 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .team-member p {
+            color: #777;
+        }
+
+        .testimonials blockquote {
+            background-color: #fff;
+            border-left: 5px solid #007BFF;
+            margin: 20px 0;
+            padding: 10px 20px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .contact a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Welcome to MAJESTIC MILESTONES, where we turn your visions into unforgettable events. Our mission is to provide exceptional event planning and management services tailored to meet your specific needs.</p>
+
+        <h2>Our Mission</h2>
+        <p>To create unique, memorable events that exceed our clients' expectations through innovation, creativity, and meticulous attention to detail.</p>
+
+        <h2>Our Vision</h2>
+        <p>To be the leading event management company known for delivering high-quality, bespoke event experiences.</p>
+
+        <h2>Services We Offer</h2>
+        <ul>
+            <li>Wedding Planning</li>
+            <li>Corporate Events</li>
+            <li>Branding</li>
+            <li>Private Parties</li>
+            <li>Destination Weddings</li>
+            <li>Product Launches</li>
+            <li>Conferences and Seminars</li>
+            <li>Catering</li>
+            <li>Photo and Video</li>
+            <li>Sound</li>
+            <li>Lights</li>
+            <li>Car Rental</li>
+            <li>Makeup</li>
+            <li>Botique</li>
+            
+        </ul>
+
+        <h2>Our History</h2>
+        <p>Founded in 2022, MAJESTIC MILESTONES has grown from a small startup to a renowned event management company. Over the years, we have successfully managed over 500 events, each tailored to our clients' needs and preferences.</p>
+
+        <h2>Meet Our Team</h2>
+        <div class="team">
+            <div class="team-member">
+                <img src="{% static 'images/shakthik.jpeg' %}" alt="Team Member 1">
+                <h3>Shakthi K</h3>
+                <h3>Founder & CEO</h3>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/kcc.jpeg' %}" alt="Team Member 2">
+                <h3>KharanC</h3>
+                <h3>Event Head</h3>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/rakshitha.jpeg' %}" alt="Team Member 3">
+                <h3>Rakshitha M P</h3>
+                <h3>Marketing Head</h3>
+            </div>
+        </div>
+
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials">
+            <blockquote>
+                "The event was a huge success thanks to MAJESTIC MILESTONES. Their attention to detail and professional approach made everything seamless." - Keshavan
+            </blockquote>
+            <blockquote>
+                "We were thrilled with the service provided by MAJESTIC MILESTONES. They made our wedding day truly special." - Megala
+            </blockquote>
+        </div>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to book our services, please don't hesitate to <a href="{% url 'contact' %}">contact us</a>.</p>
+    </div>
+</body>
+</html>
+

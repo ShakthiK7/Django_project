@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Booking
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card border-light shadow-lg">
+                <div class="card-body">
+                    <h1 class="text-center mb-4">Book Your Events</h1>
+                    
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        
+                        <!-- Render the form fields with Bootstrap classes -->
+                        {{ form.as_p|safe }}
+
+                        <!-- Add custom button styling -->
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Book Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Add a custom background color to the body -->
+<style>
+    body {
+        background: linear-gradient(to bottom right, #d8bfd8, #e6e6fa);
+    }
+    .card {
+        background-color: #ffffff;
+    }
+    .card-body {
+        padding: 2rem; /* Extra padding for card content */
+    }
+</style>
+{% endblock %}
